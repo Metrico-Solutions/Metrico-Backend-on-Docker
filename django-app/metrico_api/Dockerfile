@@ -2,8 +2,8 @@
 FROM python:3.7.3-alpine
 
 # set work directory
-WORKDIR /Users/israelsach/Metrico-Backend-on-Docker/django-app/metrico_api
-
+#WORKDIR /Users/israelsach/Metrico-Backend-on-Docker/django-app/metrico_api
+WORKDIR /my-work-dir
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -24,4 +24,5 @@ COPY ./entrypoint.sh .
 COPY . .
 
 # run entrypoint.sh
-ENTRYPOINT ["/Users/israelsach/Metrico-Backend-on-Docker/django-app/metrico_api/entrypoint.sh"]
+#ENTRYPOINT ["/Users/israelsach/Metrico-Backend-on-Docker/django-app/metrico_api/entrypoint.sh"]
+ENTRYPOINT ["/my-work-dir/entrypoint.sh"]
